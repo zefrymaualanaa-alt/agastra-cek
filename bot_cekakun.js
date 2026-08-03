@@ -147,6 +147,8 @@ async function scanForRestrictions(page, rawCookieString) {
 }
 
 async function startGlobalBrowser() {
+// --- SETUP BROWSER ---
+async function startGlobalBrowser() {
     console.log(`\x1b[33m[PROCESS]\x1b[0m Memulai global Chromium instance...`);
     try {
         globalBrowser = await chromium.launch({ 
@@ -164,23 +166,6 @@ async function startGlobalBrowser() {
         console.error(`\x1b[31m[ERROR]\x1b[0m Gagal memulai browser:`, error);
     }
 }
-
-async function startGlobalBrowser() {
-    console.log(`\x1b[33m[PROCESS]\x1b[0m Memulai global Chromium instance...`);
-    globalBrowser = await chromium.launch({ 
-        headless: true, // <--- UBAH JADI TRUE
-        // channel: 'chrome', <--- HAPUS ATAU COMMENT BARIS INI
-        args: [
-            '--disable-blink-features=AutomationControlled', 
-            '--no-sandbox', 
-            '--disable-dev-shm-usage',
-            '--autoplay-policy=no-user-gesture-required'
-        ],
-        ignoreDefaultArgs: ['--disable-component-update']
-    });
-    console.log(`\x1b[32m[SUCCESS]\x1b[0m Chromium instance berhasil diinisialisasi.`);
-}
-
 // --- FUNGSI UTAMA PENGECEKAN BROWSER ---
 async function processCekAkunTarget(targetUrl, updateStatusCallback) {
     let context = null;
