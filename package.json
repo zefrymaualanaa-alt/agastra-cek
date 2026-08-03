@@ -1,14 +1,15 @@
 {
-  "name": "agastra-cookies",
+  "name": "agastra-cek",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Agastra Netflix Checker Bot",
+  "main": "bot_cekakun.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node bot_cekakun.js"
   },
   "dependencies": {
-    "adm-zip": "^0.5.10",
-    "axios": "^1.6.0",
-    "dotenv": "^16.3.1",
-    "telegraf": "^4.15.3"
+    "dotenv": "^16.6.1",
+    "node-fetch": "^2.7.0",
+    "playwright": "^1.54.2",
+    "telegraf": "^4.16.3"
   }
 }
