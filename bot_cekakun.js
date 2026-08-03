@@ -73,8 +73,6 @@ const activeCekAkunSessions = new Map();
 const taskQueue = [];
 let isWorkerRunning = false;
 let currentWorkerTask = null;
-let globalBrowser = null;
-
 // --- BANNER TERMINAL CYBER AESTHETIC ---
 function showCyberBanner() {
     const cyan = "\x1b[36m";
